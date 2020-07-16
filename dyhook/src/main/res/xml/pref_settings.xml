@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <PreferenceCategory android:title="@string/pref_category_interface">
+        <SwitchPreference android:title="@string/pref_toggle_hide_icon" android:key="settings_interface_hide_icon" android:summary="@string/prompt_need_reboot" android:defaultValue="false"/>
+        <ListPreference android:entries="@array/pref_option_module_language_entries" android:title="@string/pref_option_module_language" android:key="settings_module_language" android:defaultValue="1" android:entryValues="@array/pref_option_module_language_entry_values"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_chatting">
+        <SwitchPreference android:title="@string/pref_toggle_chatroom_hider" android:key="settings_chatting_chatroom_hider" android:summary="@string/pref_toggle_chatroom_hider_summary" android:defaultValue="false"/>
+        <SwitchPreference android:title="@string/pref_toggle_prevent_recall" android:key="settings_chatting_recall" android:defaultValue="true"/>
+        <EditTextPreference android:singleLine="true" android:selectAllOnFocus="true" android:title="@string/pref_text_recall_prompt" android:key="settings_chatting_recall_prompt" android:dependency="settings_chatting_recall" android:defaultValue="@string/prompt_message_recall"/>
+        <EditTextPreference android:singleLine="true" android:selectAllOnFocus="true" android:title="@string/pref_text_select_photos_limit" android:key="settings_select_photos_limit" android:defaultValue="1000" android:inputType="number"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_sns">
+        <SwitchPreference android:title="@string/pref_toggle_sns_adblock" android:key="settings_sns_adblock" android:defaultValue="true"/>
+        <SwitchPreference android:title="@string/pref_toggle_prevent_moment_delete" android:key="settings_sns_delete_moment" android:defaultValue="true"/>
+        <SwitchPreference android:title="@string/pref_toggle_prevent_comment_delete" android:key="settings_sns_delete_comment" android:defaultValue="true"/>
+        <SwitchPreference android:title="@string/pref_toggle_keyword_blacklist" android:key="settings_sns_keyword_blacklist" android:summary="@string/pref_toggle_keyword_blacklist_summary" android:defaultValue="false"/>
+        <EditTextPreference android:singleLine="true" android:selectAllOnFocus="true" android:title="@string/pref_list_keyword_blacklist" android:key="settings_sns_keyword_blacklist_content" android:summary="@string/pref_list_keyword_blacklist_summary" android:dependency="settings_sns_keyword_blacklist"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_settings_miscellaneous">
+        <SwitchPreference android:title="@string/pref_toggle_auto_login" android:key="settings_auto_login" android:summary="@string/pref_toggle_auto_login_summary" android:defaultValue="false"/>
+        <SwitchPreference android:title="@string/pref_toggle_mark_all_as_read" android:key="settings_mark_all_as_read" android:defaultValue="true"/>
+        <com.xp.wx.frontend.widget.PasswordSwitchPreference android:title="@string/pref_toggle_secret_friend" android:key="settings_secret_friend" android:defaultValue="false"/>
+        <com.xp.wx.frontend.widget.PasswordPreference android:password="false" android:singleLine="true" android:selectAllOnFocus="true" android:title="@string/pref_text_secret_friend_password" android:key="settings_secret_friend_password" android:dependency="settings_secret_friend"/>
+        <EditTextPreference android:singleLine="true" android:selectAllOnFocus="true" android:title="@string/pref_text_secret_friend_hide_option" android:key="settings_secret_friend_hide_option" android:summary="@string/pref_text_secret_friend_hide_option_summary" android:dependency="settings_secret_friend" android:defaultValue="@string/button_hide_friend"/>
+    </PreferenceCategory>
+</PreferenceScreen>

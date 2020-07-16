@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:gravity="center" android:id="@+id/rl_empty" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:id="@+id/noDouYinImageView" android:background="@android:color/transparent" android:layout_width="111dp" android:layout_height="wrap_content" android:src="@drawable/ico_no_dou_yin"/>
+        <TextView android:textSize="20sp" android:textColor="#999999" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="未登入抖音号" android:layout_below="@+id/noDouYinImageView"/>
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/rl_content" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:id="@+id/iv_head" android:layout_width="100dp" android:layout_height="100dp" android:layout_marginTop="100dp" android:layout_centerHorizontal="true"/>
+        <TextView android:textSize="20sp" android:textColor="@color/black" android:id="@+id/tv_nickname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="爆汁裂变" android:layout_below="@+id/iv_head" android:layout_centerHorizontal="true"/>
+        <TextView android:textColor="#777" android:id="@+id/tv_display_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="爆小汁" android:layout_below="@+id/tv_nickname" android:layout_centerHorizontal="true"/>
+        <Button android:textSize="18sp" android:textColor="#fff" android:id="@+id/btn_bind" android:background="@drawable/shape_view_yellow" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="30dp" android:text="绑定" android:layout_alignParentBottom="true" android:layout_marginStart="24dp" android:layout_marginEnd="24dp"/>
+    </RelativeLayout>
+</RelativeLayout>

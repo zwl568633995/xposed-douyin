@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:icon="@drawable/ic_dou_yin_selector" android:id="@+id/navigation_home" android:title="@string/title_home"/>
+    <item android:icon="@drawable/ic_hui_dou_selector" android:id="@+id/navigation_dashboard" android:title="@string/title_dashboard"/>
+    <item android:icon="@drawable/ic_user_center_selector" android:id="@+id/navigation_notifications" android:title="@string/title_notifications"/>
+</menu>
