@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="5dp" android:paddingBottom="5dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="10dp" android:paddingEnd="10dp">
-    <TextView android:textColor="#555" android:id="@+id/tv_history_dy_id" android:layout_width="0dp" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1"/>
-    <ImageView android:id="@+id/iv_delete_history" android:padding="3dp" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/icon_delete"/>
-</LinearLayout>

@@ -80,13 +80,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-//    implementation "com.github.bumptech.glide:glide:$glide"
-//    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
     compileOnly "com.squareup.okhttp3:okhttp:$okhttp"
-//    implementation "com.zhy:okhttputils:$okhttputils"
     implementation project(':ehook')
     implementation project(":dy")
-    implementation project(":socket")
     implementation 'com.google.code.gson:gson:2.8.6'
     compileOnly 'de.robv.android.xposed:api:82'
     compileOnly 'de.robv.android.xposed:api:82:sources'
@@ -94,41 +90,3 @@ dependencies {
 
 }
 
-// 每次修改运行后自动让 VXP 中的模块`即时生效` ,需要将 (Debug Configurations) - Before Launch - Gradle aware Make - 修改为 :app:installDebug
-afterEvaluate {
-    installDebug.doLast {
-//        updateVirtualXposedAPP.execute()
-//        rebootVirtualXposedAPP.execute()
-//        launchVirtualXposedAPP.execute()
-//        launchVirtualXposedSampleAPP.execute()
-//        restartWeworkApp.execute()
-    }
-}
-
-// 更新 重启企业微信
-task restartWeworkApp(type: Exec) {
-    commandLine android.adbExecutable, 'shell', 'am', 'force-stop', 'com.tencent.wework'
-//    commandLine android.adbExecutable, 'shell', 'am', 'start', '-n' ,'com.tencent.wework/com.tencent.wework.launch.LaunchSplashActivity'
-}
-
-// 更新 VXP 中的 app
-task updateVirtualXposedAPP(type: Exec) {
-    def pkg = android.defaultConfig.applicationId
-    commandLine android.adbExecutable, 'shell', 'am', 'broadcast', '-a', 'io.va.exposed.CMD', '-e', 'cmd', 'update', '-e', 'pkg', pkg
-}
-
-// 重启 VXP
-task rebootVirtualXposedAPP(type: Exec) {
-    commandLine android.adbExecutable, 'shell', 'am', 'broadcast', '-a', 'io.va.exposed.CMD', '-e', 'cmd', 'reboot'
-}
-
-// 重启 VXP 企业微信
-task launchVirtualXposedAPP(type: Exec) {
-    def pkg = 'com.tencent.wework'
-    commandLine android.adbExecutable, 'shell', 'am', 'broadcast', '-a', 'io.va.exposed.CMD', '-e', 'cmd', 'launch', '-e', 'pkg', pkg
-}
-// 重启 VXP Sample
-task launchVirtualXposedSampleAPP(type: Exec) {
-    def pkg = 'com.ehook.sample'
-    commandLine android.adbExecutable, 'shell', 'am', 'broadcast', '-a', 'io.va.exposed.CMD', '-e', 'cmd', 'launch', '-e', 'pkg', pkg
-}

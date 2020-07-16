@@ -11,8 +11,5 @@ object Classes {
     val ClassChatroomPresenterAz: Class<*> by lazy("${javaClass.name}.ClassChatroomPresenterAz") {
         findClassIfExists("$packageName.az", classLoader!!)
     }
-    val ClassChatroomPresenterC: Class<*> by lazy("${javaClass.name}.ClassChatroomPresenterC") {
-        findClassIfExists("$packageName.c", classLoader!!)
-    }
 }
 

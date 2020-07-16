@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
-    <ImageView android:id="@+id/loadingImageView" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:srcCompat="@drawable/img_loading"/>
-    <Button android:textSize="17sp" android:textColor="#12091a" android:id="@+id/startActivityButton" android:background="@drawable/btn_white_bg" android:layout_width="183dp" android:layout_height="40dp" android:layout_marginBottom="60dp" android:text="开始体验" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0"/>
-</androidx.constraintlayout.widget.ConstraintLayout>

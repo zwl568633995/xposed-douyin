@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content">
-    <RelativeLayout android:id="@+id/rl_tool_bar" android:background="@color/yellow" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <EditText android:textSize="16sp" android:textColor="#555" android:textColorHint="#777" android:id="@+id/et_dy_id" android:background="@drawable/et_dialog_bind_dy_bg" android:layout_width="match_parent" android:layout_height="40dp" android:hint="请输入抖音号" android:maxLines="1" android:maxLength="20" android:paddingStart="10dp" android:paddingEnd="10dp" android:layout_toStartOf="@+id/tv_bind" android:autofillHints=""/>
-        <TextView android:textSize="16sp" android:textColor="#fff" android:gravity="center" android:id="@+id/tv_bind" android:background="@drawable/btn_dialog_bind_dy_bg" android:layout_width="wrap_content" android:layout_height="40dp" android:text="绑定" android:paddingStart="10dp" android:paddingEnd="10dp" android:layout_alignParentEnd="true"/>
-    </RelativeLayout>
-    <com.wujieshuju.huidou.p031ui.widget.MaxHeightRecyclerView android:id="@+id/rv_history" android:background="@drawable/common_radiu_5_bg" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/rl_tool_bar" android:overScrollMode="never" android:layout_marginStart="10dp" app:maxHeight="200dp"/>
-</RelativeLayout>

@@ -7,7 +7,7 @@ import com.evan.dy.mirror.PackageUtils
 
 object Classes {
     private val packageName = PackageUtils.getPath(javaClass)
-    val ClassCommentWidget: Class<*> by lazy("${javaClass.name}.ClassCommentWidget") {
+    val ClassWidget: Class<*> by lazy("${javaClass.name}.ClassWidget") {
         findClassIfExists("$packageName.CommentWidget", classLoader!!)
     }
 }

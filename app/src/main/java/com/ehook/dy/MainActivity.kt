@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         CmdUtil.isRoot
         sample_test.setOnClickListener {
-            MainDebug().debug()
         }
 
     }
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         if (checkHook()) {
             val path = EasyHook.getApplicationApkPath(
                 this,
-                Hooker.TARGET_PACKAGE
+                AppGlobal.TARGET_PACKAGE
             )
             sample_text.text = "hooked = true  \n  \n $path"
         }

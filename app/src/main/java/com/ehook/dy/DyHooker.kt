@@ -23,15 +23,11 @@ class DyHooker : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         tryVerbosely {
-            LogUtil.e("DyHooker", "processName= all =${lpparam.processName} packageName =${lpparam.packageName}")
             if (TextUtils.equals(Global.DY_PACKAGE_NAME, lpparam.processName) &&
                 TextUtils.equals(Global.DY_PACKAGE_NAME, lpparam.packageName) &&
                 EasyHook.isImportantDyProcess(lpparam)) {
-                LogUtil.e("DyHooker", "processName= dy ........")
                 hookDyAttachBaseContext(lpparam.classLoader) {
-                    LogUtil.e("DyHooker", "processName= dy ... ${lpparam.processName} packageName =${lpparam.packageName}")
                     if (TextUtils.equals(Global.DY_PACKAGE_NAME, getCurrentProcessName(it))) {
-                        LogUtil.e("DyHooker", "processName= dyp ... ${lpparam.processName} packageName =${lpparam.packageName}")
                         if (Global.isDebug) {
                             HookGlobal.unitTestMode = true
                             hookDyOnFly(lpparam, it)
@@ -40,7 +36,7 @@ class DyHooker : IXposedHookLoadPackage, IXposedHookZygoteInit {
                         }
                     }
                 }
-            } else if (TextUtils.equals(Hooker.TARGET_PACKAGE, lpparam.processName)) {
+            } else if (TextUtils.equals(AppGlobal.TARGET_PACKAGE, lpparam.processName)) {
                 hookAttachBaseContext(lpparam.classLoader) {
                     hookLoadHooker(lpparam.classLoader)
                 }
@@ -101,7 +97,6 @@ class DyHooker : IXposedHookLoadPackage, IXposedHookZygoteInit {
     private fun hookDy(param: XC_LoadPackage.LoadPackageParam, context: Context) {
         when (param.packageName) {
             Global.DY_PACKAGE_NAME -> {
-                LogUtil.e("DyHooker", "抖音开启...")
                 EasyHook.startup(
                     lpparam = param,
                     plugins = WwEngine.plugins,
@@ -114,9 +109,8 @@ class DyHooker : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
 
     private fun hookDyOnFly(param: XC_LoadPackage.LoadPackageParam, context: Context) {
-        LogUtil.e("DyHooker", "fly 抖音开启")
         val path = EasyHook.getApplicationApkPath(
-            context, Hooker.TARGET_PACKAGE
+            context, AppGlobal.TARGET_PACKAGE
         )
         when (File(path).exists()) {
             true -> {

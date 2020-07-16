@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/container" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent">
-    <fragment android:name="androidx.navigation.fragment.NavHostFragment" android:id="@+id/nav_host_fragment" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/nav_view" app:defaultNavHost="true" app:navGraph="@navigation/mobile_navigation"/>
-    <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/nav_view" android:background="?android:attr/windowBackground" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" app:itemTextColor="@color/ic_home_back_text_selector" app:menu="@menu/bottom_nav_menu"/>
-</RelativeLayout>

@@ -2,11 +2,10 @@ package com.evan.dy.interfaces
 
 interface IMessageHook {
 
-    fun onCommentWidgetResume(widget: Any?)
+    fun onWidgetResume(widget: Any?)
 
-    fun onCommentWidgetPause(widget: Any?)
+    fun onWidgetPause(widget: Any?)
 
     fun onMessage(message: Any?)
 
-    fun onRoomChanged(room: Any?)
 }

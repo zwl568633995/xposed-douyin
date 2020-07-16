@@ -1,7 +1,5 @@
 package com.evan.dy.api.model;
 
-import com.evan.dy.api.model.dy.DyLiveMessage;
-
 import de.robv.android.xposed.XposedHelpers;
 
 public class LiveRoomMessage {
@@ -20,29 +18,6 @@ public class LiveRoomMessage {
         return (int) intType;
     }
 
-    public long getMessageId() {
-        long messageId = (long) XposedHelpers.callMethod(obj, "getMessageId");
-        return messageId;
-    }
-
-    public DyLiveMessage.DyMessage getMessage() {
-        DyLiveMessage.DyMessage dyMessage;
-        int messageType = getMessageType();
-        if (getMessageType() == MessageEnum.MEMBER.ordinal()) {
-            dyMessage = new DyLiveMessage.MemberMessage().parseFrom(getObj());
-        }
-        else if (getMessageType() == MessageEnum.CHAT.ordinal()) {
-            dyMessage = new DyLiveMessage.TextMessage().parseFrom(getObj());
-        } else if (getMessageType() == MessageEnum.GIFT.ordinal()) {
-            dyMessage = new DyLiveMessage.GiftMessage().parseFrom(getObj());
-        } else {
-//            new Message.NormalMessage().print(obj);
-            dyMessage = new DyLiveMessage.NormalMessage().parseFrom(getObj());
-        }
-        dyMessage.messageType = messageType;
-        dyMessage.messageId = getMessageId();
-        return dyMessage;
-    }
 
     @Override
     public String toString() {
@@ -50,7 +25,6 @@ public class LiveRoomMessage {
 //            "message=" + message +
             ", obj=" + obj +
             ", messageType=" + getMessageType() +
-            ", messageId=" + getMessageId() +
             '}';
     }
 

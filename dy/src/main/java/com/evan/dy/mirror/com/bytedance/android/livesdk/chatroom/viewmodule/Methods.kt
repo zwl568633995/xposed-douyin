@@ -8,14 +8,14 @@ import java.lang.reflect.Method
 object Methods {
     val ClassCommentWidget_a: Method by lazy("${javaClass.name}.ClassCommentWidget_a") {
         ReflecterHelper.findMethodsByExactParameters(
-            Classes.ClassCommentWidget, null,
+            Classes.ClassWidget, null,
             Clazz.String, Clazz.Boolean, Clazz.Boolean
         ).firstOrNull()
     }
     val ClassCommentWidget_onPause: Method by lazy("${javaClass.name}.ClassCommentWidget_onPause") {
-        ReflecterHelper.findMethodIfExists(Classes.ClassCommentWidget, "onPause")
+        ReflecterHelper.findMethodIfExists(Classes.ClassWidget, "onPause")
     }
     val ClassCommentWidget_onResume: Method by lazy("${javaClass.name}.ClassCommentWidget_onResume") {
-        ReflecterHelper.findMethodIfExists(Classes.ClassCommentWidget, "onResume")
+        ReflecterHelper.findMethodIfExists(Classes.ClassWidget, "onResume")
     }
 }

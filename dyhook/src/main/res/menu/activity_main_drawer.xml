@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
-    <group android:id="@+id/nav_group_common" android:checkableBehavior="single">
-        <item android:icon="@drawable/ic_menu_status" android:id="@+id/nav_status" android:title="@string/status"/>
-        <item android:icon="@drawable/ic_menu_settings" android:id="@+id/nav_settings" android:title="@string/settings"/>
-        <item android:icon="@drawable/ic_menu_developer" android:id="@+id/nav_developer" android:title="@string/developer"/>
-        <item android:icon="@drawable/ic_menu_status" android:id="@+id/nav_message" android:title="@string/message"/>
-    </group>
-</menu>
